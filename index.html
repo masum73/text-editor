@@ -5,14 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Text Editor</title>
+    <!-- Font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- tailwind cdn added -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        button{
+            padding: 5px !important;
+            border-radius: 5px;
+        }
+        button:hover,
+        button:focus,
+        button:active{
+            background-color: black;
+        }
+    </style>
+
 </head>
-<body>
+<body class="bg-black">
     <main>
-        <section class="bg-slate-500 w-9/12 mx-auto">
+        <section class="bg-slate-800 text-white w-1/2 mx-auto rounded-xl">
             <h1 class="text-5xl text-center mt-12">My Text Editor</h1>
-            
+
+            <div class="h-96 p-4 bg-gray-600 rounded-xl mt-6">
+                <div class="grid grid-cols-3 bg-slate-300">
+                    <div class="bg-gray-700 pl-4 justify-start flex gap-3">
+                        <button id="bold"><i class="fa-solid fa-bold"></i></button>
+                        <button id="italic"><i class="fa-solid fa-italic"></i></button>
+                        <button id="underline"><i class="fa-solid fa-underline"></i></button>
+                        <button id="delete"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                    <div class="bg-gray-700 justify-center flex gap-3">
+                        <button id="align-left"><i class="fa-solid fa-align-left"></i></button>
+                        <button id="align-center"><i class="fa-solid fa-align-center"></i></button>
+                        <button id="align-right"><i class="fa-solid fa-align-right"></i></button>
+                    </div>
+                    <div class="bg-gray-700 pr-4 justify-end items-center flex gap-3">
+                        <button id="text-tansform">aA</button>
+                        <input type="number" value="16" class="w-1/4 px-1 rounded bg-black text-white" id="font-size">
+                        <input type="color" class="rounded" value="#f1f1f1" id="color">
+                    </div>
+                </div>
+                <textarea id="text-input" placeholder="Type Your Text" class="w-full h-5/6 rounded-xl bg-gray-800 text-gray-300 p-2 mt-5"></textarea>
+            </div>
         </section>
     </main>
     
